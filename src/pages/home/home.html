@@ -1,18 +1,44 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+
+<!--     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+ -->
+    <ion-title>kyberia v3 ion</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content padding text-center>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+  <ion-list class="container-mini">
+
+    <ion-item>
+      <ion-label>login</ion-label>
+      <ion-input type="text"
+        [(ngModel)]="login"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>heslo</ion-label>
+      <ion-input type="password"
+        [(ngModel)]="password"
+      ></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <br>
+
+  <p color="danger" *ngIf="errors">
+    To mi nejako nevychadza
   </p>
+  
+  <button ion-button
+    (click)="btnLogin()"
+  >
+    login
+  </button>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>

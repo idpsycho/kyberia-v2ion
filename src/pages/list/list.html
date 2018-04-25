@@ -1,23 +1,40 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      &lt;
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>K</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
+
+  <div class="container">
+
+    <div *ngFor="let post of posts">
+      <div class="v2node">
+
+          <ion-badge color="danger">{{ post.k }} K</ion-badge>
+
+          <img class="avatar" float-left [src]="post._userAvatar">
+
+          <div style="margin-left: 60px">
+            <a href>{{ post.node_name }}</a>
+            in&nbsp;<a href>{{ post.parent_name }}</a>
+            by&nbsp;<a href>{{ post.creator }}</a>
+          </div>
+
+
+          <br style="clear: both">
+          <br>
+
+          <div [innerHTML]="post._node_content_br">
+          </div>
+
       </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+
   </div>
+
+
 </ion-content>
